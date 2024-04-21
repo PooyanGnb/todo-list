@@ -4,19 +4,19 @@
 
 @section('content')
 
-    <div>
-        <a href="{{route('tasks.create')}}">Add Task!</a>
-    </div>
+    <nav class="mb-4">
+        <a href="{{route('tasks.create')}}" class="link">Add Task!</a>
+    </nav>
     @forelse ($tasks as $task)
         <div>
-            <a href="{{route('tasks.show', ['task'=> $task->id])}}">{{$task->title}}</a>
+            <a href="{{route('tasks.show', ['task'=> $task->id])}}" @class(['line-through decoration-pink-500' => $task->completed])>{{$task->title}}</a>
         </div>
     @empty
     <div>There are no tasks</div>
     @endforelse
 
     @if ($tasks->count())
-    <nav>
+    <nav class="mt-4">
         {{$tasks->links()}}
     </nav>
     @endif
