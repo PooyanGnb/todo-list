@@ -10,7 +10,12 @@ class Task extends Model
     use HasFactory;
 
     protected $fillable = ['title', 'description', 'long_description'];
-    // protected $guarded = ['password'];
+    // protected $guarded = ['password'];d
+
+    public function toggleComplete() {
+        $this->completed = !$this->completed;
+        $this->save();
+    }
 
     // public function getRouteKeyName() {
     //     return 'slug';

@@ -3,6 +3,7 @@
 
 <head>
     <title>TodoList</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     @yield('styles')
 </head>
 
